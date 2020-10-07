@@ -16,9 +16,9 @@
 7. Write instance methods
 
 ###### Part 2
-1. Use class variables
-2. Write class methods
-3. Use `self` for both class and instance appropriately
+1. Use `self` for both class and instance methods 
+2. Use class variables
+3. Write class methods
 4. Write private methods
 5. Get more practice with array compositions (`each`, `map`, `select`, `find`)
 
