@@ -17,4 +17,9 @@ class Fan
     def self.all
         @@all 
     end
+
+    def self.superfans
+        #inside a class method, so self is the class
+        self.all.find_all { |fan| fan.isSuperFan }
+    end
 end

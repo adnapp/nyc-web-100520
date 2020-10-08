@@ -49,9 +49,28 @@ Build Performer & Fan Relationship
 
 Add Relationship Methods
 - Let's think of some together! 
+- `Performer#fans` returns an array of all fan instances related to that performer
+- `Fan#performer` returns the performer instance associated with the fan 
+- `Fan#num_shows` return the number of shows a Fan has attended... might need some additional info for this 
 
+- `Performer#birthday_fans`  returns all the fans with a birthday in a certain month 
+- `Performer#vip_fans` returns an array of VIP fans aka isSuperFan is true 
+- `Fan.superfans` returns a list of all super fan Fan instances
 
 ## Want More Practice???
+- `Performer#give_vip_passes` print vip pass greetings to all vip fans ==> HALP
+- `Performer#tantrum` performer loses one fan (one random fan) ==> HALP 
+- `Fan#my_genre_performers` returns an array of all performers who have the same genre as their favorite performer. Try to make sure this does not include their current performer. 
+- `Performer#sign_autographs` prints out an autograph addressed to each fan by name
+
+- Build a Show class which has a date (string like 10/07/20) and time (string like 10:00pm) (other instance variables are up to you!)
+- A Performer has many shows and a show Belongs to a Performer
+- You will need to build...
+    - `Performer#shows` returns an array of all Show instances associated with the Performer
+    - `Show#performer` returns the Performer instance associated with the Show
+    - `Performer#shows_by_date(date)` returns an array of all associated shows occuring on that date
+    - Whatever methods make you happy!!!
+- Next level: Each Show must belong to a headliner (Performer instance) and have an opening_act (Performer instance but can be nil)
 
 
 ## Icebox

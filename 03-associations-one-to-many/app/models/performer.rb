@@ -15,6 +15,9 @@ class Performer
         @genre = genre
         @height = height
         @networth = networth
+        # @@all, Perfomer.all, self.class.all
+        # self is an instance of Performer so self.class == Performer
+        # we can use Performer.all as long as we defined that (all) method
         @@all << self
     end
 
@@ -26,6 +29,16 @@ class Performer
     def add_to_fanbase(fan) #fan instance
         fan.performer = self # self is the current perofmer
         # fan.performer is our setter on the fan instance
+    end
+
+    def birthday_fans(month)
+        # self.fans is the array returned by my Performer#fans method
+        # an array of just fan instances associated with this performer
+        self.fans.select { |fan| fan.birthMonth == month }
+    end
+
+    def vip_fans
+        self.fans.select { |fan| fan.isSuperFan }
     end
 
     def self.all
@@ -45,6 +58,7 @@ class Performer
 
     def collaborate(performer)
         backstage
+        # if theres a self there MAKE IT EXPLICIT
         puts "#{self.name} is collaborating with #{performer.name}"
     end
 
