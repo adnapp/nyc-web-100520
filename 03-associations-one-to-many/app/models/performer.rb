@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 class Performer
 
@@ -6,19 +6,26 @@ class Performer
     attr_accessor :name, :talent, :genre, :networth
 
     # binding.pry
-    @@performer_count = 0
     @@all = []
 
-    def initialize(name, talent, hit_songs, genre, height, networth)
+    def initialize(name, talent, hit_songs, genre, height, networth) # lets give height a default later
         @name = name
         @talent = talent
         @hit_songs = hit_songs
         @genre = genre
         @height = height
         @networth = networth
-        @@performer_count += 1
         @@all << self
+    end
 
+    def fans
+        Fan.all.select { |fan| fan.performer == self }
+    end
+
+    # when we do this correctly, why dont we need to require?
+    def add_to_fanbase(fan) #fan instance
+        fan.performer = self # self is the current perofmer
+        # fan.performer is our setter on the fan instance
     end
 
     def self.all
@@ -32,7 +39,7 @@ class Performer
     end
 
     def self.performer_count
-        @@performer_count
+        @@all.count
     end
 
 
