@@ -14,9 +14,50 @@ Many to Many Relationships
 - [ ] Implement a many-to-many relationship in Ruby
 - [ ] *if there's time* add additional methods that use the relationships
 
+## Questions - how're we feeling about OOP?
+- has many through
+- using self
+- single source of truth
+
 ## Examples
 
+Performer -< Fan
 
+Doctor -< Appointment >- Patient
+
+Doctor has many Appointments
+Doctor has many Patients through Appointments
+
+Appointment belongs to Doctor
+Appointment belongs to Patient
+
+Patient has many Appointments
+Patient has many Doctors through Appointments
+
+Store -< Purchase >- Customer
+
+GameDeveloper -< Game >- Gamer
+
+Movie -< Screening >- MovieTheater
+
+Person -< Ticket >- Screening
+
+
+<!-- Person - MovieTheater >- Movie -->
+
+Driver -< Ride >- Passenger
+
+
+AlienSpecies -< Colony >- Planets
+
+AlienSpecies has many Colonies
+AlienSpecies has many Planets through Colonies
+
+Colony belongs to AlienSpecies
+Colony belongs to Planet
+
+Planet has many Colonies
+Planet has many AlienSpecies through Colonies
 
 
 
