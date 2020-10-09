@@ -19,6 +19,9 @@ Many to Many Relationships
 - using self
 - single source of truth
 
+## Spreadsheet example
+https://docs.google.com/spreadsheets/d/14fbVbE0HCUpdmbvriu5dvVlX5vy93Qy0ww4KlnlKRiI/edit#gid=332807605&fvid=1062242242
+
 ## Examples
 
 Performer -< Fan
