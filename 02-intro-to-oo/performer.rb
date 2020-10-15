@@ -69,7 +69,9 @@ class Performer
     end
 
     def moonwalk_dance
-        puts "#{@name} just danced the moonwalk! Such talent 💯"
+        puts "#{self.name} just danced the moonwalk! Such talent 💯"
     end
+
+    private :backstage
 
 end

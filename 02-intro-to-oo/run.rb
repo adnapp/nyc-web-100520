@@ -7,6 +7,17 @@ p2 = Performer.new("Britney", "vocalist", "OOPS", "pop", "average", 100000000000
 p3 = Performer.new("Bon Jovi", "vocalist", "OOPS", "pop", "average", 200)
 p4 = Performer.new("Selena", "vocalist", "OOPS", "pop", "average", 300)
 
+class Test
+    def initialize(name, *args)
+        puts args
+        @increase_impatience = 0
+        @name = name
+        @list_of_docs = list_of_docs
+        @speciality = speciality
+        # @@collect  << self
+
+    end
+end
 
 
 
