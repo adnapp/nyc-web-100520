@@ -9,6 +9,9 @@ Intro to ActiveRecord
 - [ ] Practice with `ActiveRecord::Base` instance and class methods
 - [ ] Perform persistent CRUD actions on one model using ActiveRecord
 
+
+____
+
 ### Outline
 * Recap of purpose of databases, SQL, & ORMs
 * Review project setup
@@ -23,6 +26,11 @@ Intro to ActiveRecord
 * To complete on your own or with a partner:
   - Set up ActiveRecord on third model
 
+
+
+  hotel -< reservation >- traveller
+
+____
 
 ### ActiveRecord
 
@@ -58,12 +66,15 @@ end
 
 5. Test!
 
+____
 
 ### Rake
 
 Rake lets us save some set instructions we want the computer to run into a command that we can call in the terminal using `rake` ie: `rake db:create_migration NAME="create_tweets"`
 
 If we want to check what tasks we have available to us, we can do `rake --tasks` or `rake -T`
+
+____
 
 ### Migrations
 Migrations are ActiveRecord keeps track of database changes over time. Think of migrations as *version control* (like git) for your database.
@@ -73,6 +84,10 @@ We specify how we want the database to change in the migration file: [docs](http
 * We can create migrations using `rake db:create_migration NAME="the_name_we_want`
 * We can check what migrations have been run so far using `rake db:migrate:status`
 * We tell ActiveRecord to apply what we wrote in the migration files to the database using `rake db:migrate`
+
+
+____
+
 
 ### ActiveRecord Conventions
 ActiveRecord relies heavily on naming conventions to do its metaprogramming (aka *magic*), and following those naming conventions is important if you want ActiveRecord to work as intended.
@@ -92,6 +107,9 @@ For ActiveRecord to connect between a model and a table, the model name should b
   "human".pluralize
   # => humen (????)
 ```
+
+____
+
 
 ### Methods from ActiveRecord
 
