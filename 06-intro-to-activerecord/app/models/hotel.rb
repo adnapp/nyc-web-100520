@@ -1,5 +1,10 @@
 class Hotel < ActiveRecord::Base
 
+    
+
+end
+
+    # CRUD!!!!!
     # Create
     # Hotel.new -> create a new ruby instance
     # Hotel#save -> insert into the DB
@@ -20,5 +25,3 @@ class Hotel < ActiveRecord::Base
     # Delete
     # Hotel#destroy -> destros instance from the DB
     # Hotel.destroy_all -> destroy everything from the table in the DB
-
-end

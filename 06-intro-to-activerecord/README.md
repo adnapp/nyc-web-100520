@@ -126,6 +126,58 @@ ____
 * Model#destroy - delete a row in the database
 * Model.destroy_all - delete all rows in a table
 
+
+____
+# Active Record Associations
+
+## Agenda
+1. Go over agenda 🙃
+2. Review!
+3. Questions!
+4. Build traveler class together and test! 
+5. Talk strategy for building out our domain. 
+6. Map out our domain ( Hotel, Reservation, Traveler )
+7. BUILD ALL THE THINGS AND TEST ALL THE THINGS
+
+### Review
+1. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Associations in ActiveRecord
+
+#### Strategy
+1. Map out / draw out your domain
+2. Create / update migration files and models
+  * When do you need tables and classes, when can you have just a class? * 
+3. Seed
+4. Test
+
+
+____
+
+
 ### Resources
 [ActiveRecord Basics](https://guides.rubyonrails.org/active_record_basics.html)
 [ActiveRecord Migrations](https://guides.rubyonrails.org/active_record_migrations.html)

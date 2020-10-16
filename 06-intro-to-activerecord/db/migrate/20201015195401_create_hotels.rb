@@ -7,7 +7,6 @@ class CreateHotels < ActiveRecord::Migration[6.0]
       t.boolean :pool
       t.integer :rating
       t.text :description
- 
       t.timestamps
     end
   end
