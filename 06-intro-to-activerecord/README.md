@@ -140,29 +140,46 @@ ____
 7. BUILD ALL THE THINGS AND TEST ALL THE THINGS
 
 ### Review
-1. 
+1. What are some common rake commands youll use in terminal?
+rake console, 
+rake db:create_migration, 
+rake db:migrate, 
+rake db:migrate:status
+rake db:rollback
+rake db:seed
+rake -T
+
+2. What's the point of the seeds file? 
+dummy data / starter data
+populate the db
+Why? To help us test our application and any data we need before the user interacts
+
+3. What do migration ( files ) do? 
+What are some common commands you'll use in migrations?
+Alter the db 
+Any changes to our db or tables ===> AR, rake, migrations 
+    as opposed to... any changes to our models ===> Ruby
+- create_table
+- add_column
+- remove_column
+
+4. What are some conventions / rules in AR? 
+pluralization rules (aka single model, plural table)
+snake_case (files, table names) vs CamelCase (ModelNames)
+Time stamping / ordering migration files 
+create vs new&save
+seeds.rb must be named that way! 
+
+5. What does AR write for us that we had to write in OOP? What DON'T we write anymore?
+- SQL... under the hood writes the SQL for us
+- attr_macros ===> we don't write these anymore! 
+- associations... we still need to write a little something 
+- initialize 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Icebox / Questions
+- What is the difference between a stored proc and a queue (Michael)
+- find_or_create_by(hash)... what it sounds like 
 
 
 ### Associations in ActiveRecord
@@ -170,15 +187,29 @@ ____
 #### Strategy
 1. Map out / draw out your domain
 2. Create / update migration files and models
-  * When do you need tables and classes, when can you have just a class? * 
 3. Seed
 4. Test
 
+
+* When do you need tables and classes, when can you have just a class? * 
+Classes / Models ==> Ruby
+Tables / DB ===> AR / Rake / Migrations 
+  We need DB to store info; to *persist* information
+
+Rules:
+1. Anytime you want to persist info you need a table
+2. If you have table, you want to have a related class. Otherwise you cant interact with the info. 
+3. If you have a class, you only need table to persist. 
+
+
+### Next Steps
+- What does this look like for a more complex model? Try with https://github.com/cmccarthy15/mod1_cc_retake_practice
+- So what about those aggregate and association methods we still have to write? 
 
 ____
 
 
 ### Resources
-[ActiveRecord Basics](https://guides.rubyonrails.org/active_record_basics.html)
-[ActiveRecord Migrations](https://guides.rubyonrails.org/active_record_migrations.html)
-[ActiveRecord Querying](https://guides.rubyonrails.org/active_record_querying.html)
+- [ActiveRecord Basics](https://guides.rubyonrails.org/active_record_basics.html)
+- [ActiveRecord Migrations](https://guides.rubyonrails.org/active_record_migrations.html)
+- [ActiveRecord Querying](https://guides.rubyonrails.org/active_record_querying.html)
