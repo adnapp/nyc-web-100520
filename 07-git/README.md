@@ -20,7 +20,7 @@
     - git merge
     - git push
     - git fetch
-    - git pull
+    - git pull (git fetch + git merge)
     - git log
 
 
