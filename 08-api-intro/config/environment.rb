@@ -10,7 +10,8 @@ Bundler.require
 # )
 
 # enables logging in console whenever ActiveRecord writes SQL for us
-ActiveRecord::Base.logger = Logger.new(STDOUT)
+# ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.logger = nil
 
 # require all files in our app directory
 require_all 'app'

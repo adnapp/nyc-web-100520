@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2020_10_16_183849) do
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "category_id"
-    t.boolean "winning_game"
+    t.integer "score"
+    t.integer "total_possible"
   end
 
   create_table "users", force: :cascade do |t|
