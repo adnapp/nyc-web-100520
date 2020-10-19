@@ -11,7 +11,7 @@ gem "sqlite3"
 gem "pry"
 
 # to make API requests
-gem 'rest-client'
+gem 'rest-client' # let you actually make the requests to the URLs
 
 # to prettify-CLI
 gem 'tty-prompt', '~> 0.22.0'

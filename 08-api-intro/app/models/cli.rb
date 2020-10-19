@@ -1,7 +1,5 @@
 require "tty-prompt"
 require "pry"
-require 'rest-client'  
-require 'json' 
 
 class CLI
     @@prompt = TTY::Prompt.new
