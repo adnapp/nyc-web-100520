@@ -49,7 +49,7 @@ class CLI
             }
         action = @@prompt.select("What would you like to do?", choices)
         case action
-        when 1 
+        when 1  #Play a random category
             random_cat = Category.all.sample # gets random category from those seeded
             api_data = self.get_category_data(random_cat) # uses helper method to get clues from API
             self.play_game(random_cat.id, api_data) # plays the game!
@@ -59,7 +59,7 @@ class CLI
             puts "You chose to see results"
         when 4
             puts "You chose to see your game results"
-        when 5
+        when 5 # Select from all categories
             chosen_category = self.choose_category # uses helper method to display and get category choice
             api_data = self.get_category_data(chosen_category) # uses helper method to get clues from API
             self.play_game(chosen_category.id, api_data) # plays the game!
@@ -74,6 +74,9 @@ class CLI
     end
 
     def get_category_data(category)
+        resp = RestClient.get("http://jservice.io/api/category?id=#{category.api_id}")
+        data = JSON.parse(resp)
+        # binding.pry
         # AI: send a request to the API for clues from the correct category, passed in as an argument
     end
 
