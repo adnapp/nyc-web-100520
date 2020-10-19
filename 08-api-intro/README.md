@@ -19,7 +19,13 @@ D - destroy ===> DELETE... deletes the specified resource
 
 ## Resources
 - [jservice trivia](http://jservice.io/)
-
+- [stripe api](https://stripe.com/docs/api)
+- [HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [HTTP Status Dogs](https://httpstatusdogs.com/)
+- [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [RestClient Docs](https://github.com/rest-client/rest-client)
+- [Hiding your API Keys 1](https://dev.to/kcarrel/major-key-alert-hide-your-api-keys-l4c)
+- [Hiding your API Keys 2](https://medium.com/better-programming/how-to-hide-your-api-keys-c2b952bc07e6)
 
 
 
