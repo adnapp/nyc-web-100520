@@ -1,0 +1,14 @@
+<h1>Student Index Page</h1>
+
+<a href="https://www.espn.com/nfl/scoreboard"> ESPN LINK </a>
+<br>
+<a href="/students/1"> Student One </a>
+<br>
+<%= link_to("text on page", "/students/1") %>
+
+<% @students.each do |student| %>
+  <p><%= link_to student.name, "students/#{student.id}" %></p>
+  <p><%= link_to student.name, student_path(student.id) %></p>
+  <p><%= link_to student.name, student_path(student) %></p>
+<% end  %>
+
