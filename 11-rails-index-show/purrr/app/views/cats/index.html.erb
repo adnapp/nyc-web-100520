@@ -1,0 +1,7 @@
+<h1>Here are your cats 🐈</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li><%= cat.name %>, <%= cat.softness %>, <%= cat.age %></li>
+  <% end %>
+</ul>
