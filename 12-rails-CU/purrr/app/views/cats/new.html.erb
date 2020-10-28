@@ -1,0 +1,26 @@
+<h1>Create A Cat!</h1>
+
+
+
+<%= form_for @cat do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :softness %>
+  <%= f.text_field :softness %>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+
+  <%= f.submit  %>
+<% end %>
+
+
+<hr>
+
+<form action="/cats" method="POST">
+  <input type="text" name="cat[name]">
+  <input type="text" name="cat[softness]">
+  <input type="number" name="cat[age]">
+  <input type="submit">
+</form>

@@ -1,0 +1,9 @@
+<h1>Here are your cats 🐈</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li><%= link_to cat.name, cat_path(cat.id) %>, <%= cat.softness %>, <%= cat.age %></li>
+  <% end %>
+</ul>
+
+<a href="/cats/1"> Cat One </a>
