@@ -1,0 +1,14 @@
+<h1>Cats Show Page</h1>
+
+
+<h2><%= @cat.name %></h2>
+<p>Softness: <%= @cat.softness %></p>
+<p>Age: <%= @cat.age %></p>
+
+
+
+<%= button_to "😿", cat_path, method: :delete  %>
+                <%# "cats/:id" %>
+<%= link_to "Index", cats_path %> 
+                    <%# "/cats" %>
+
