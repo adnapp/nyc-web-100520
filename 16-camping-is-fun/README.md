@@ -10,14 +10,37 @@ Currently, we don't have any way to associate the two, so consider the relations
 
 1. To log a camper with an activity, we need to store some additional information in our database. Make the necessary updates to our database, so that **a `camper` can have many `activities`** and **an `activity` can have many campers**. The `signup` should also include a time (as an integer) that is between 0 and 23, referring to the hour of the activity.
 
+* √create a `signup` model/table to join campers and activities
+* √build out relationships btw campers, activities, and signup
+* √create a migration with foreign keys
+
 2. As a user, I should be able to go to the index page of the `campers` and click on the names to go to the show page for that `camper`. The show page should show the `camper's` name, their age and the list of activities that they have signed up for.
+
+* √show route
+* √show action in the controller
+* √build out links in the camper/index view page
+* √build a show view
 
 3. As a user, I should be able to go to the index page of the `activities` and click on the name of the activity to go to the show page for that `activity`. The show page should show the `activity's` name and its difficulty level.
 
+* √show route
+* √show action in the controller
+* √build out links in the activity/index view page
+* √build a show view
+
 4. As a user, I should be able to fill out a form to create a new `signup` that will associate a `camper` with an `activity`. I should be able to choose an existing `activity`, choose an existing `camper` and add a time. Upon a successful creation, I should be redirected to the `camper's` show page.
+
+* √build out the signup#new route/controller action/view
+* √collection select on camper and activity
+* √build out create junk
+* √redirect to camper path on successful create
 
 5. As a user, I should be able to fill out a form to create a new `camper`, with their names (which must be unique) and age (which must be between 8 and 18)!
 
+* √build out the new/create routes/controller/views etc. for camper
+* √validations on camper name and age
+* √BTW you still have to... validation on the hour property of signup to make sure it's between 0 & 23
+
 ### Hints / Tips
 
-+ Remember we want to be RESTful. What URL should show info about a particular camper? What URL should show a form to create a signup? What controller actions are associated?  
++ Remember we want to be RESTful. What URL should show info about a particular camper? What URL should show a form to create a signup? What controller actions are associated?   
