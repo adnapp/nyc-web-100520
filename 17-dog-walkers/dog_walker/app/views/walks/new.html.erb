@@ -1,0 +1,17 @@
+<h1>🐕‍🦺🚶🏽‍♂️ Book a Walk for a Dog!!! 🚶🏿‍♀️🦮</h1>
+
+<%= form_for @walk do |f| %>
+  <%= f.label :walker %>
+  <%= f.collection_select :walker_id, Walker.all, :id, :full_name, prompt: true %>
+  <br>
+  <%= f.label :dog %>
+  <%= f.collection_select :dog_id, Dog.all, :id, :name, prompt: true %>
+  <br>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <br>
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+  <br>
+  <%= f.submit %>
+<% end %>

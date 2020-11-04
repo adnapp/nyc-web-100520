@@ -1,0 +1,20 @@
+<h1>🐕‍🦺 Create a New Dog 🦮</h1>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+  <br>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <br>
+  <%= f.label :sex %>
+  <%= f.label :m %>
+  <%= f.radio_button :sex, "M"%>
+  <%= f.label :f %>
+  <%= f.radio_button :sex, "F"%>
+  <br>
+  <%= f.submit %>
+<% end %>
