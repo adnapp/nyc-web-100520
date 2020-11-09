@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   delete '/cats/:id', to: 'cats#destroy'
 
   delete '/sessions/page_reset', to: 'sessions#page_reset', as: 'page_reset'
+  delete '/sessions/logout', to: 'sessions#logout', as: 'logout'
 end

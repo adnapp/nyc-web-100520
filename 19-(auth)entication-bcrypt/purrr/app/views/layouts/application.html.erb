@@ -10,6 +10,20 @@
   </head>
 
   <body>
+
+    <ul class="nav">
+      <li><%= link_to "Cats", cats_path %></li>
+      <li><%= link_to "Create A Cat", new_cat_path %></li>
+      <li><%= link_to "Endorse A Cat", new_endorsement_path %></li>
+
+      <% if @current_user %>
+        <li class="right">Welcome!!! <%= @current_user.name %></li>
+        <li class="right"><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li class="right"><%= link_to "Sign Up", new_user_path %></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

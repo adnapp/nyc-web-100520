@@ -5,4 +5,10 @@ class SessionsController < ApplicationController
 
     redirect_back fallback_location: cats_path
   end
+
+  def logout 
+    session.delete(:user_id)
+
+    redirect_to cats_path
+  end 
 end

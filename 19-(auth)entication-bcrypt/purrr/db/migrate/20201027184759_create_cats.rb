@@ -4,6 +4,8 @@ class CreateCats < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :softness
       t.integer :age
+      t.string :img_url
+      t.string :bio
       t.timestamps
     end
   end
