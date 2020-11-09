@@ -1,0 +1,33 @@
+<% if session[:page_count] <= 3 %>
+
+  <h4 style="color:green"><%=  3 - session[:page_count] %> page views left!!</h4>
+
+  <h1>Cats Show Page</h1>
+
+
+  <h2><%= @cat.name %></h2>
+  <p>Softness: <%= @cat.softness %></p>
+  <p>Age: <%= @cat.age %></p>
+
+
+
+  <%= button_to "😿", cat_path, method: :delete  %>
+                  <%# "cats/:id" %>
+  <%= link_to "Index", cats_path %> 
+                      <%# "/cats" %>
+
+
+  <h3>Humans who edorse me!!</h3>
+
+  <% @cat.endorsements.each do |endorsement| %>
+    <hr>
+    <p><%= endorsement.content %> - <b><%= endorsement.user.user_name %></b></p>
+  <% end %>
+
+<% else %>
+  <h1>SOME CAT AD</h1>
+  <iframe width="764" height="573" src="https://www.youtube.com/embed/d1E_K58Qa54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <%= button_to "I promise I watched this ad", page_reset_path, method: :delete %>
+<% end %>
+<%# reset cookies[:page_count] %>
