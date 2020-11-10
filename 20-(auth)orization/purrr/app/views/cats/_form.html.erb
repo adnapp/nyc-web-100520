@@ -1,0 +1,24 @@
+
+<% if flash[:cat_errors] %>
+  <% flash[:cat_errors].each do |error| %>
+    <p style="color:red;"><%= error %></p>
+  <% end %>
+<% end  %>
+
+
+<%= form_for @cat do |f| %>
+  <div class='form-input'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-input">
+    <%= f.label :softness %>
+    <%= f.text_field :softness %>
+  </div>
+  <div class="form-input">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+  <br>
+  <%= f.submit class: "form-btn" %>
+<% end %>

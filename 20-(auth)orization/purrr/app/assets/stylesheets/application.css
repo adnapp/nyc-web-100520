@@ -1,0 +1,148 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* ---------------------- CSS for Navbar and Banner -------------------- */
+
+ .banner-img {
+  width: 100%;
+  max-height: 200px;
+ }
+
+ .banner {
+   width: 90%;
+   max-height: 200px;
+   margin: 5px auto;
+ }
+
+
+ .nav {
+  background-color: #FD615A;
+  
+  height: 30px;
+  width: 90%;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+ .nav li {
+   /* border: 1px solid black; */
+   display: inline-block;
+   line-height: 30px;
+   padding: 0px 15px;
+   margin: 0px;
+
+ }
+
+ .nav li:hover {
+   background-color: #F93072;
+   transition: 1s;
+ }
+
+ .nav li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 800;
+}
+
+
+.right {
+  float: right;
+}
+
+/* --------------CSS for background on every page --------------------- */
+
+.container {
+  margin: 5px auto;
+  max-width: 87%;
+  background-color: rgba(253, 97, 90, 0.2);
+  padding: 10px;
+  border-radius: 25px;
+  height: 100%;
+}
+
+/* ----------------------- CSS for Forms ------------------------------*/
+
+.form-container {
+  max-width: 300px;
+  margin: 0px auto;
+  background-color: rgba(249, 48, 114, 0.2);
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.form-btn {
+  background-color: rgb(249, 48, 114);
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+.form-input {
+  margin-top: 10px;
+}
+
+/* ---------------------- CSS for Index Pages --------------------- */
+
+.index-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+
+.index-tile {
+  padding: 10px;
+  margin: 8px 0px;
+  text-align: center;
+  background-color: rgba(249, 48, 114, 0.2);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.index-tile:hover {
+  border: 3px solid rgb(249, 48, 114); 
+  background-color: rgba(249, 48, 114, 0.3);
+}
+
+.index-tile h3 a {
+  text-decoration: none;
+  color: rgb(249, 48, 114);
+  font-weight: 1200;
+}
+
+.index-img {
+  max-width: 150px;
+}
+
+
+/* ------------------- CSS for Show Pages ----------------- */
+
+.show-img {
+  max-width: 300px;
+}
+
+.endoresment {
+  padding: 10px;
+  background-color: rgba(253, 97, 90, 0.2);
+  border-radius: 25px;
+  border-bottom: 2px solid rgb(253, 97, 90);
+}
+
+/* ------------------- CSS for Ad ---------------- */
+
+iframe {
+  max-width: 700px;
+}

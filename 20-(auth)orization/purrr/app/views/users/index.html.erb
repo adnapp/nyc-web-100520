@@ -1,0 +1,13 @@
+
+  <% if flash[:profile_error] %>
+    <p><%= flash[:profile_error] %></p>
+  <% end %>
+
+<div class='index-container'>
+  <% @users.each do |user| %>
+    <div class='index-tile'>
+      <h3><%= link_to user.name,  user_path(user) %></h3>
+    </div>
+  <% end %>
+</div>
+

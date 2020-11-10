@@ -1,0 +1,12 @@
+
+
+<div class="index-container">
+  <% @cats.each do |cat| %>
+    <div class="index-tile">
+      <h3><%= link_to cat.name, cat_path(cat.id) %></h3>
+      <%= image_tag cat.img_url, class: "index-img" %>
+    </div>
+  <% end %>
+</div>
+
+
