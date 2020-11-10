@@ -1,18 +1,30 @@
-<h1>Create Endorsement</h1>
+
+<div class="form-container">
+
+  <h1>Create Endorsement</h1>
 
 
-<%= form_for @endorsement do |f| %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= form_for @endorsement do |f| %>
+    <div class="form-input">
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+    </div>
 
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
+    <div class="form-input">
+      <%= f.label :rating %>
+      <%= f.number_field :rating %>
+    </div>
 
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
+    <div class="form-input">
+      <%= f.label :user_id %>
+      <%= f.collection_select :user_id, User.all, :id, :name %>
+    </div>
 
-  <%= f.label :cat_id %>
-  <%= f.collection_select :cat_id, Cat.all, :id, :name %>
+    <div class="form-input">
+      <%= f.label :cat_id %>
+      <%= f.collection_select :cat_id, Cat.all, :id, :name %>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit class: "form-btn" %>
+  <% end %>
+</div>

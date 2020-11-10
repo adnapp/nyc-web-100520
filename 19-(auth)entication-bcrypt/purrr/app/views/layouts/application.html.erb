@@ -11,6 +11,10 @@
 
   <body>
 
+    <div class="banner">
+      <%= image_tag "cats_tinder.gif", class: "banner-img" %>
+    </div>
+
     <ul class="nav">
       <li><%= link_to "Cats", cats_path %></li>
       <li><%= link_to "Create A Cat", new_cat_path %></li>
@@ -24,6 +28,8 @@
       <% end %>
     </ul>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

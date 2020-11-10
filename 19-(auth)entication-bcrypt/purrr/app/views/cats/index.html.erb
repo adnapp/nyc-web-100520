@@ -1,9 +1,12 @@
-<h1>Here are your cats 🐈</h1>
 
-<ul>
+
+<div class="index-container">
   <% @cats.each do |cat| %>
-    <li><%= link_to cat.name, cat_path(cat.id) %>, <%= cat.softness %>, <%= cat.age %></li>
+    <div class="index-tile">
+      <h3><%= link_to cat.name, cat_path(cat.id) %></h3>
+      <%= image_tag cat.img_url, class: "index-img" %>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<a href="/cats/1"> Cat One </a>
+

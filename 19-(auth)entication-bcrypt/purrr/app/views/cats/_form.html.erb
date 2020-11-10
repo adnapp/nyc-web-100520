@@ -7,14 +7,18 @@
 
 
 <%= form_for @cat do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :softness %>
-  <%= f.text_field :softness %>
-
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-
-  <%= f.submit  %>
+  <div class='form-input'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-input">
+    <%= f.label :softness %>
+    <%= f.text_field :softness %>
+  </div>
+  <div class="form-input">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+  <br>
+  <%= f.submit class: "form-btn" %>
 <% end %>
