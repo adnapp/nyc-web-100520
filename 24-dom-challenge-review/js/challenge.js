@@ -1,19 +1,18 @@
 /*
-  3. As a user, I can 'like' an individual number of the counter. I should see count of the number of 'likes' associated with that number.
+  5. As a user, I can leave comments on my gameplay, such as: "Wow, what a fun game this is."
 
-  // when the like button is clicked
-  // if the number hasn't been liked
-    // add a new LI to the ul.likes
-    // that shows "The number X has been liked 1 time"
-  // if the number HAS been liked
-    // find the LI for that number
-    // update the text to say "The number X has been liked X times"
+  when the form is submitted
+  create new P 
+  use the text input by the user to set the content of the P
+  add it to the COMMENT div#list
 */
 
 // DOM Elements
 const timerH1 = document.querySelector("h1#counter")
 const buttonContainer = document.querySelector("#button-container")
 const likesUl = document.querySelector("ul.likes")
+const commentForm = document.querySelector("#comment-form")
+const commentList = document.querySelector("#list")
 
 // Application State (single source of truth)
 let currentNumber = 0
@@ -22,6 +21,21 @@ let likedNumbers = {}
 // { 1: 3, 20: 2 }
 
 // Events
+commentForm.addEventListener("submit", event => {
+  // always do this for submits!
+  event.preventDefault()
+
+  const p = document.createElement("p")
+  const input = document.querySelector("#comment-input")
+  // const input = commentForm.comment
+  // const input = event.target.comment
+  p.textContent = input.value
+  commentList.append(p)
+
+  event.target.reset()
+  // commentForm.reset()
+})
+
 buttonContainer.addEventListener("click", event => {
   if (event.target.id === "plus") {
     changeCounter(1)
