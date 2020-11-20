@@ -14,45 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // const data = new FormData(form)
+  // const obj = {}
+  // data.forEach((value, key) => obj[key] = value)
+  // console.log(obj)
+
+  /*** Variables ***/
   const addToyForm = document.querySelector(".add-toy-form")
   const toyCollection = document.querySelector("#toy-collection")
+  const url = 'http://localhost:3000/toys'
 
 
-  fetch('http://localhost:3000/toys')
-    .then(response => {
-      return response.json()
-    }).then((toyArray) => {
-      toyArray.forEach((toy) => {
-        renderOneToy(toy)
-      })
-    })
 
+
+  /*** Event Listeners ****/
 
   addToyForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    const toyName = event.target.name.value
-    // const toyName = addToyForm[0].value
-    const imgUrl = event.target.image.value
-    // const imgUrl = eaddToyForm[1].value
-    const toy = {
-      name: toyName,
-      image: imgUrl,
-      likes: 0
-    }
 
-    fetch('http://localhost:3000/toys', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(toy)
-    })
-      .then((response) => {
-        return response.json()
-      })
+    const data = new FormData(addToyForm)
+    const obj = {}
+    data.forEach((value, key) => obj[key] = value)
+    obj.likes = 0
+
+    makeFetchHappen('POST', url, obj)
+      .then((response) => response.json())
       .then((toy) => {
-        renderOneToy(toy)
+        renderOneToy(obj)
+        addToyForm.reset()
       })
   })
 
@@ -62,28 +51,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const div = event.target.closest('div')
       const id = div.dataset.id
       const likesDisplay = div.querySelector('p')
-      const newLikes = parseInt(likesDisplay.textContent) + 1
+      const newLikes = { likes: parseInt(likesDisplay.textContent) + 1 }
 
-      fetch(`http://localhost:3000/toys/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({ likes: newLikes })
-      })
-        .then(response => {
-          return response.json()
-        })
+      makeFetchHappen('PATCH', `${url}/${id}`, newLikes)
+        .then(response => response.json())
         .then(toy => {
           likesDisplay.textContent = `${toy.likes} likes`
         })
     }
   })
 
+  /***** Helper Functions *****/
+  function makeFetchHappen(method, url, jsObj) {
+    return fetch(url, {
+      method: method,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(jsObj)
+    })
+  }
 
-
-
+  function initializer() {
+    fetch('http://localhost:3000/toys')
+      .then(response => {
+        return response.json()
+      }).then((toyArray) => {
+        toyArray.forEach((toy) => {
+          renderOneToy(toy)
+        })
+      })
+  }
 
   function renderOneToy(toyObject) {
     const div = document.createElement("div")
@@ -96,5 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="like-btn">Like <3</button>`
     toyCollection.append(div)
   }
+
+
+  initializer()
 
 });
