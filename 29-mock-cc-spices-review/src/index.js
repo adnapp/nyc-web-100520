@@ -1,13 +1,15 @@
 /*
-  Add a new ingredient to the spice blend when the #ingredient-form is submitted. The new ingredient should be displayed on the page (no persistence needed for now).
+  Click on an image from the #spice-images div and see all the info about that spice blend displayed inside the #spice-blend-detail div. You will need to make another GET request with the spice blend's ID to get the information about the spice blend that was clicked.
 
-  when the ingredient form is submitted
-  (don't worry bout fetch for now)
-  slap the new ingredient on the DOM
-    - get the ingredient name from the form 
-    - create a new LI
-    - add it to the ingredient list
+  When any image is clicked
+  Make a GET /spiceblends/:id
+  And display the spice blend details
 */ 
+
+/**** STATE *****/ 
+let currentSpiceId = 1
+
+
 
 /**** DOM ELEMENTS *****/ 
 const titleH2 = document.querySelector(".title")
@@ -16,14 +18,26 @@ const ingredientsUl = document.querySelector(".ingredients-list")
 const titleInput = document.querySelector("#spiceblend-title")
 const updateForm = document.querySelector("#update-form")
 const ingredientForm = document.querySelector("#ingredient-form")
+const spiceImagesDiv = document.querySelector("#spice-images")
 
 
 /**** RENDER FUNCTIONS *****/ 
+const renderSpiceBlendImage = spiceblendObj => {
+  // Slap the images in the #spice-images div
+  // - create <img> element
+  const img = document.createElement("img")
+  // - set src/alt
+  img.src = spiceblendObj.image
+  img.alt = spiceblendObj.title
+  img.dataset.id = spiceblendObj.id
+  // - append to the #spice-images
+  spiceImagesDiv.append(img)
+}
+
 // function renderSpiceBlend(spiceblendObj) {
 // }
 
 const renderIngredient = ingredientObj => {
-  console.log({ ingredientObj })
   // create an element
   const li = document.createElement("li")
   // add some text content
@@ -39,18 +53,36 @@ const renderSpiceBlend = spiceblendObj => {
 
   titleInput.value = spiceblendObj.title
   
+  ingredientsUl.innerHTML = ""
+  // while (ingredientsUl.firstChild) ingredientsUl.firstChild.remove()
+
   spiceblendObj.ingredients.forEach(renderIngredient)
 }
 
 /**** EVENT HANDLERS *****/ 
+spiceImagesDiv.addEventListener("click", event => {
+  if (event.target.matches("img")) {
+    const spiceId = parseInt(event.target.dataset.id)
+    currentSpiceId = spiceId
+    
+    console.log(currentSpiceId)
+
+    // GET /spiceblends/:id
+    getFirstSpice(spiceId)
+  }
+})
+
+
 ingredientForm.addEventListener("submit", event => {
   event.preventDefault()
 
   const ingredientName = event.target.name.value
 
   const ingredientObj = {
-    name: ingredientName
+    name: ingredientName,
+    spiceblendId: currentSpiceId
   }
+  addIngredient(ingredientObj)
 
   // renderIngredient(ingredientObj)
   const li = document.createElement("li")
@@ -72,8 +104,21 @@ updateForm.addEventListener("submit", event => {
 
 
 /**** FETCH FUNCTIONS *****/ 
+const addIngredient = (data) => {
+  fetch("http://localhost:3000/ingredients", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(r => r.json())
+    .then(console.log)
+}
+
+
 const updateSpice = (data) => {
-  fetch("http://localhost:3000/spiceblends/1", {
+  fetch(`http://localhost:3000/spiceblends/${currentSpiceId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -88,12 +133,23 @@ const updateSpice = (data) => {
     })
 }
 
-const getFirstSpice = () => {
-  fetch("http://localhost:3000/spiceblends/1")
+const getFirstSpice = (id) => {
+  fetch(`http://localhost:3000/spiceblends/${id}`)
     .then(r => r.json())
     .then(spiceblendObj => renderSpiceBlend(spiceblendObj))
 }
 
+const getAllSpices = () => {
+  fetch("http://localhost:3000/spiceblends")
+    .then(r => r.json())
+    .then(spiceblendArray => {
+      spiceblendArray.forEach(spiceblendObj => {
+        renderSpiceBlendImage(spiceblendObj)
+      })
+    })
+}
+
 
 /**** INITIALIZE *****/ 
-getFirstSpice()
+getFirstSpice(1)
+getAllSpices()
