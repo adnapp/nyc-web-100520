@@ -1,5 +1,33 @@
 # Building a Node CLI
 
+## You know about Node?
+
+- server side
+- not in browser!
+- used for backend
+- MERN (Mongo Express React Node)
+
+Browser Features
+- DOM
+- Event Handling
+- Fetch
+
+Node
+- work with a DB
+- running a server
+- accessing files on the computer
+- getting input from a command line
+
+
+
+
+## Learning Goals
+
+- [ ] Differentiate between Node environment and browser environment
+- [ ] Run code using Node
+- [ ] Understand the Node event loop
+- [ ] Use `npm` to install packages
+
 ## Deliverables
 
 ### MVP

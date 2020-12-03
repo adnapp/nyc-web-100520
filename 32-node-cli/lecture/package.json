@@ -1,0 +1,22 @@
+{
+  "name": "lecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "bin": {
+    "vanilla-js-generator": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-git": "^2.24.0"
+  }
+}
