@@ -23,7 +23,7 @@ class BlogCard extends Component{
 
     render(){
         console.log("State in Card: ", this.state)
-        const {blogObject} = this.props
+        const {blogObject} = props
         return(
             <div>
             <h5>{blogObject.title}</h5>

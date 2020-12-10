@@ -9,7 +9,7 @@
   - form.addEventListener
   - <button onChange={submitHandler}>
  - callback function 
-  - form.addEventListener("submit", submitHandler())
+  - form.addEventListener("submit", submitHandler)
 
 functional setState: this.setState(function(){return {}})
 
@@ -24,4 +24,4 @@ updateCount() {
 }
 
 `${}`
- function submitHandler(){}
+ function submitHandler(e){}
