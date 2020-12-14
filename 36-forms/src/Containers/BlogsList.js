@@ -14,8 +14,7 @@ class BlogsList extends React.Component {
     filteredArrayOfBlogCards = () => {
         let filteredArray = this.state.apiResponse.filter(blogEl => blogEl.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
 
-
-
+        // "title".includes("") => true
 
         return filteredArray.map(blogEl => <BlogCard key={blogEl.id} blogObject={blogEl} addSavedBlog={this.props.addSavedBlog}/>)
     }
